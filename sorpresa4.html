@@ -1,0 +1,385 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Un tarrito lleno de amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 18px;
+    text-align: center;
+    font-family: Georgia, serif;
+    color: white;
+    background: radial-gradient(circle at top, #65152b, #21060d 60%, #080808);
+}
+
+h1 {
+    color: #ff829d;
+    font-size: clamp(28px, 5vw, 43px);
+    text-shadow: 0 0 18px #ff315d;
+    margin-bottom: 12px;
+}
+
+.intro {
+    color: #ffe0e7;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 20px;
+}
+
+.tarro {
+    position: relative;
+    width: 190px;
+    height: 220px;
+    margin: 35px auto 25px;
+}
+
+.tapa {
+    position: absolute;
+    width: 145px;
+    height: 22px;
+    background: #ff9bb0;
+    border: 3px solid #ffd0da;
+    border-radius: 7px;
+    top: 0;
+    left: 22px;
+}
+
+.cristal {
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    top: 17px;
+    left: 7px;
+    border: 4px solid #ffc4d1;
+    border-radius: 25px 25px 40px 40px;
+    background: rgba(255, 180, 200, 0.10);
+    box-shadow: 0 0 25px rgba(255, 80, 130, 0.25);
+    overflow: hidden;
+}
+
+.papelitos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+    padding: 14px 8px;
+    height: 100%;
+}
+
+.mini {
+    font-size: 24px;
+    animation: flotar 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes flotar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+.base {
+    position: absolute;
+    bottom: 0;
+    left: 29px;
+    width: 130px;
+    height: 22px;
+    border-radius: 5px;
+    background: #ff9bb0;
+}
+
+.subtitulo {
+    color: #ffb6c7;
+    font-size: 17px;
+    margin: 20px 0;
+}
+
+.mensajes {
+    max-width: 900px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.papel {
+    min-height: 110px;
+    padding: 20px 12px;
+    border: 1px solid #ff9bad;
+    border-radius: 15px;
+    background: #fff0f3;
+    color: #7b1932;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #0004;
+    transition: transform .2s, background .2s;
+}
+
+.papel:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    background: #ffdce5;
+}
+
+.papel span {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.resultado {
+    display: none;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 28px 22px;
+    background: rgba(255, 235, 240, 0.10);
+    border: 1px solid #ff829d;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #ff315d33;
+}
+
+.resultado h2 {
+    color: #ff9db2;
+}
+
+.resultado p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #fff0f3;
+}
+
+.cerrar {
+    background: #e83c63;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.volver {
+    display: inline-block;
+    margin: 30px auto;
+    color: white;
+    background: #b82147;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 25px;
+}
+
+.volver:hover {
+    background: #ed4169;
+}
+
+@media (max-width: 650px) {
+    .mensajes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 390px) {
+    .mensajes {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🫙 Un tarrito lleno de amor ❤️</h1>
+
+<p class="intro">
+    He guardado un poquito de todo lo que siento por ti en estos
+    papelitos. Pulsa cada uno y descubre un mensajito hecho para ti. 💌
+</p>
+
+<div class="tarro">
+    <div class="tapa"></div>
+    <div class="cristal">
+        <div class="papelitos">
+            <span class="mini">💌</span>
+            <span class="mini">❤️</span>
+            <span class="mini">💕</span>
+            <span class="mini">💗</span>
+            <span class="mini">💖</span>
+            <span class="mini">💌</span>
+            <span class="mini">💘</span>
+            <span class="mini">❤️</span>
+            <span class="mini">💝</span>
+            <span class="mini">💕</span>
+            <span class="mini">💗</span>
+            <span class="mini">💌</span>
+        </div>
+    </div>
+    <div class="base"></div>
+</div>
+
+<p class="subtitulo">
+    ✨ Elige un papelito, miamor ✨
+</p>
+
+<div class="mensajes">
+
+    <button class="papel" onclick="abrir(0)">
+        <span>💗</span>
+        Ábreme cuando me eches de menos
+    </button>
+
+    <button class="papel" onclick="abrir(1)">
+        <span>🥹</span>
+        Una cosa que me encanta de ti
+    </button>
+
+    <button class="papel" onclick="abrir(2)">
+        <span>📸</span>
+        Un recuerdo nuestro
+    </button>
+
+    <button class="papel" onclick="abrir(3)">
+        <span>❤️</span>
+        Si alguna vez dudas de lo nuestro
+    </button>
+
+    <button class="papel" onclick="abrir(4)">
+        <span>😘</span>
+        Lo que te diría ahora mismo
+    </button>
+
+    <button class="papel" onclick="abrir(5)">
+        <span>🌙</span>
+        Antes de dormir
+    </button>
+
+    <button class="papel" onclick="abrir(6)">
+        <span>😂</span>
+        Una razón para sonreír
+    </button>
+
+    <button class="papel" onclick="abrir(7)">
+        <span>💌</span>
+        Algo que quiero que sepas
+    </button>
+
+    <button class="papel" onclick="abrir(8)">
+        <span>♾️</span>
+        Un deseo para nosotros
+    </button>
+
+    <button class="papel" onclick="abrir(9)">
+        <span>🫶</span>
+        Cuando tengas un día difícil
+    </button>
+
+    <button class="papel" onclick="abrir(10)">
+        <span>🎵</span>
+        Nuestra canción
+    </button>
+
+    <button class="papel" onclick="abrir(11)">
+        <span>💍</span>
+        Algo que imagino contigo
+    </button>
+
+</div>
+
+<div class="resultado" id="resultado">
+    <h2 id="titulo"></h2>
+    <p id="texto"></p>
+    <button class="cerrar" onclick="cerrarMensaje()">
+        Guardar mi mensajito ❤️
+    </button>
+</div>
+
+<p style="color:#ffb6c7; margin-top:35px;">
+    No hay tarro lo bastante grande para guardar todo lo que siento por ti. ❤️
+</p>
+
+<a class="volver" href="index.html">← Volver a nuestras sorpresas</a>
+
+<script>
+const mensajes = [
+    {
+        titulo: "Te echo de menos 💗",
+        texto: "Ojalá pudiera darte un abrazo ahora mismo. Mientras llega ese momento, recuerda que, aunque no esté a tu lado, siempre hay un rinconcito de mi día dedicado a ti."
+    },
+    {
+        titulo: "Lo que me encanta de ti 🥹",
+        texto: "Me encanta tu forma de ser, cómo me haces reír y cómo consigues que los momentos más sencillos se conviertan en recuerdos que quiero guardar para siempre."
+    },
+    {
+        titulo: "Nuestros recuerdos 📸",
+        texto: "Si pudiera guardar todos nuestros momentos en una cajita, no quedaría ni un huequito libre. Y lo más bonito es pensar que todavía nos quedan muchísimos por vivir."
+    },
+    {
+        titulo: "Tú y yo ❤️",
+        texto: "No hace falta que todo sea perfecto para que lo nuestro sea especial. Quiero que podamos hablar, escucharnos, aprender y seguir eligiendo compartir momentos juntos."
+    },
+    {
+        titulo: "Si estuvieras aquí 😘",
+        texto: "Te daría un abrazo enorme, te llenaría de besos y te recordaría lo muchísimo que te quiero. Y seguramente acabaríamos riéndonos por cualquier tontería."
+    },
+    {
+        titulo: "Buenas noches, miamor 🌙",
+        texto: "Ojalá termines el día con una sonrisa. Descansa, sueña bonito y acuérdate de que eres una persona muy importante para mí. Te mando un abrazo enorme."
+    },
+    {
+        titulo: "Sonríe, tontito 😂",
+        texto: "Prohibido olvidar que tienes a alguien que te quiere muchísimo y que seguramente se va a reír contigo hasta de las cosas más absurdas. Y sí, hablo de mí. ❤️"
+    },
+    {
+        titulo: "Quiero que sepas esto 💌",
+        texto: "No tienes que ser perfecto ni tener siempre un buen día. Me importa cómo te sientes, lo que piensas y todo eso que a veces te cuesta explicar."
+    },
+    {
+        titulo: "Un deseo para nosotros ♾️",
+        texto: "Deseo que sigamos creando recuerdos, haciendo planes, riéndonos juntos y aprendiendo a cuidarnos cada día un poquito mejor."
+    },
+    {
+        titulo: "Para tus días difíciles 🫶",
+        texto: "Respira, ve poquito a poco y recuerda que no tienes que poder con todo tú solo. Mereces cariño, tranquilidad y personas que te escuchen."
+    },
+    {
+        titulo: "Nuestra canción 🎵",
+        texto: "Hay canciones que, desde que las relacionas con alguien, dejan de ser canciones normales. Para mí, la nuestra siempre tendrá un pedacito de ti."
+    },
+    {
+        titulo: "Un futuro bonito 💍",
+        texto: "Me hace ilusión imaginar todos esos pequeños momentos que todavía no hemos vivido: nuevos lugares, más fotos, más canciones y un montón de historias que contar."
+    }
+];
+
+function abrir(numero) {
+    document.getElementById("titulo").textContent =
+        mensajes[numero].titulo;
+
+    document.getElementById("texto").textContent =
+        mensajes[numero].texto;
+
+    document.getElementById("resultado").style.display = "block";
+
+    document.getElementById("resultado").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function cerrarMensaje() {
+    document.getElementById("resultado").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,176 @@
+sorpresa1.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras fotos favoritas ??</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at top, #641016, transparent 60%),
+                #100909;
+            color: white;
+            font-family: 'Patrick Hand', cursive;
+            padding: 35px 20px 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff303b;
+            font-size: clamp(35px, 6vw, 58px);
+            text-shadow: 2px 2px #400000;
+            margin-bottom: 12px;
+        }
+
+        .dedicatoria {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 45px;
+        }
+
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* MARCO TIPO INSTAX */
+        .instax {
+            width: 220px;
+            padding: 10px 10px 35px;
+            background: #fffdf7;
+            box-shadow: 0 10px 25px #0009;
+            border-radius: 3px;
+            transition: transform 0.3s;
+        }
+
+        .instax:nth-child(1) {
+            transform: rotate(-5deg);
+        }
+
+        .instax:nth-child(2) {
+            transform: rotate(4deg);
+        }
+
+        .instax:nth-child(3) {
+            transform: rotate(-3deg);
+        }
+
+        .instax:nth-child(4) {
+            transform: rotate(6deg);
+        }
+
+        .instax:hover {
+            transform: rotate(0deg) scale(1.08);
+            z-index: 2;
+        }
+
+        .instax img {
+            width: 100%;
+            height: 245px;
+            object-fit: cover;
+            display: block;
+            background: #eee;
+        }
+
+        .pie {
+            color: #282020;
+            text-align: center;
+            font-size: 19px;
+            margin-top: 12px;
+        }
+
+        .corazon {
+            color: #d71929;
+        }
+
+        .volver {
+            display: block;
+            margin: 55px auto 0;
+            padding: 12px 25px;
+            background: #d71929;
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 21px;
+            text-decoration: none;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .volver:hover {
+            background: white;
+            color: #d71929;
+        }
+
+        @media (max-width: 520px) {
+            .album {
+                gap: 25px 15px;
+            }
+
+            .instax {
+                width: min(42vw, 190px);
+                padding: 8px 8px 25px;
+            }
+
+            .instax img {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>NUESTRAS FOTOS FAVORITAS ??</h1>
+
+    <p class="dedicatoria">
+        Algunos de mis recuerdos favoritos son contigo.
+        <span class="corazon">?</span>
+    </p>
+
+    <main class="album">
+
+        <div class="instax">
+            <img src="fotos/foto1.jpg" alt="Nuestro recuerdo favorito 1">
+            <p class="pie">Tú y yo ??</p>
+        </div>
+
+        <div class="instax">
+            <img src="fotos/foto2.jpg" alt="Nuestro recuerdo favorito 2">
+            <p class="pie">Mi persona favorita</p>
+        </div>
+
+        <div class="instax">
+            <img src="fotos/foto3.jpg" alt="Nuestro recuerdo favorito 3">
+            <p class="pie">Contigo siempre</p>
+        </div>
+
+        <div class="instax">
+            <img src="fotos/foto4.jpg" alt="Nuestro recuerdo favorito 4">
+            <p class="pie">Mi lugar favorito eres tú</p>
+        </div>
+
+    </main>
+
+    <a href="index.html" class="volver">Volver a nuestra sorpresa ??</a>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para mi amor ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        .fondo {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.78)),
+                url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .telarana {
+            position: fixed;
+            color: #e50914;
+            font-size: 85px;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .arriba-izquierda {
+            top: -20px;
+            left: -12px;
+        }
+
+        .arriba-derecha {
+            top: -20px;
+            right: -12px;
+            transform: scaleX(-1);
+        }
+
+        .pagina {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .pagina.activa {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #inicio {
+            justify-content: center;
+        }
+
+        .titulo {
+            color: #ff2633;
+            font-size: clamp(38px, 8vw, 75px);
+            text-shadow: 3px 3px 0 #650000,
+                         0 0 20px rgba(255, 0, 0, 0.6);
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            font-size: clamp(23px, 4vw, 35px);
+            margin-bottom: 25px;
+        }
+
+        /* SPIDER-MAN CLICABLE */
+
+        .sticker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+
+        .sticker:hover {
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        .sticker img {
+            display: block;
+            width: 220px;
+            max-width: 65vw;
+            max-height: 38vh;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px #e50914);
+        }
+
+        .sorpresa {
+            font-size: 30px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .indicacion {
+            color: #ff6b73;
+            font-size: 21px;
+            margin-top: 8px;
+        }
+
+        /* CUATRO SORPRESAS */
+
+        #segunda {
+            justify-content: flex-start;
+            padding-top: 65px;
+        }
+
+        #segunda h2 {
+            color: #ff2633;
+            font-size: clamp(32px, 6vw, 55px);
+            margin-bottom: 12px;
+            text-shadow: 2px 2px #650000;
+        }
+
+        .texto-fotos {
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .foto {
+            border: 3px solid #e50914;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #171717;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .foto:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(229, 9, 20, 0.8);
+        }
+
+        .foto img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+        }
+
+        .foto p {
+            padding: 12px 5px;
+            font-size: 21px;
+            background: #111;
+        }
+
+        .volver {
+            margin-top: 35px;
+            border: 2px solid #ff2633;
+            border-radius: 25px;
+            padding: 10px 25px;
+            background: #b9000b;
+            color: white;
+            font-family: inherit;
+            font-size: 23px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .volver:hover {
+            background: white;
+            color: #b9000b;
+        }
+
+        @media (max-width: 850px) {
+            .galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .galeria {
+                gap: 12px;
+            }
+
+            .foto p {
+                font-size: 18px;
+            }
+
+            .sorpresa {
+                font-size: 25px;
+            }
+
+            .telarana {
+                font-size: 55px;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="fondo">
+
+    <div class="telarana arriba-izquierda">🕸</div>
+    <div class="telarana arriba-derecha">🕸</div>
+
+    <!-- PÁGINA PRINCIPAL -->
+
+    <section id="inicio" class="pagina activa">
+
+        <h1 class="titulo">Miamor te quiero!! ❤️</h1>
+
+        <p class="subtitulo">
+            Eres mi persona favorita 💋
+        </p>
+
+        <button class="sticker"
+                onclick="abrirSegundaPagina()"
+                aria-label="Abrir mi sorpresa">
+
+            <img
+                src="fotos/spiderman.png"
+                alt="Spider-Man, pulsa para ver tu sorpresa">
+
+        </button>
+
+        <p class="sorpresa">
+            Tengo una sorpresa para ti 💌
+        </p>
+
+        <p class="indicacion">
+            Pulsa sobre Spider-Man para descubrirla 🕷️
+        </p>
+
+    </section>
+
+
+    <!-- PÁGINA CON LAS CUATRO SORPRESAS -->
+
+    <section id="segunda" class="pagina">
+
+        <h2>Te mereces cada una de estas cosas ❤️</h2>
+
+        <p class="texto-fotos">
+            Haz clic en cada una 💌
+        </p>
+
+        <div class="galeria">
+
+            <a href="sorpresa1.html" class="foto">
+                <img
+                    src="https://images.unsplash.com/photo-1635863138275-d9b33299680b?auto=format&fit=crop&w=600&q=85"
+                    alt="Primera sorpresa">
+                <p>La primera ❤️</p>
+            </a>
+
+            <a href="sorpresa2.html" class="foto">
+                <img
+                    src="https://images.unsplash.com/photo-1635863138275-d9b33299680b?auto=format&fit=crop&w=600&q=85"
+                    alt="Segunda sorpresa">
+                <p>La segunda 💋</p>
+            </a>
+
+            <a href="sorpresa3.html" class="foto">
+                <img
+                    src="https://images.unsplash.com/photo-1635863138275-d9b33299680b?auto=format&fit=crop&w=600&q=85"
+                    alt="Tercera sorpresa">
+                <p>La tercera 🕷️</p>
+            </a>
+
+            <a href="sorpresa4.html" class="foto">
+                <img
+                    src="https://images.unsplash.com/photo-1635863138275-d9b33299680b?auto=format&fit=crop&w=600&q=85"
+                    alt="Cuarta sorpresa">
+                <p>La cuarta 💌</p>
+            </a>
+
+        </div>
+
+        <button class="volver" onclick="volverInicio()">
+            Volver al principio ❤️
+        </button>
+
+    </section>
+
+</div>
+
+<script>
+    function abrirSegundaPagina() {
+        document.getElementById("inicio").classList.remove("activa");
+        document.getElementById("segunda").classList.add("activa");
+        window.scrollTo(0, 0);
+    }
+
+    function volverInicio() {
+        document.getElementById("segunda").classList.remove("activa");
+        document.getElementById("inicio").classList.add("activa");
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
+```
